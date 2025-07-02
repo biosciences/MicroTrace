@@ -1,13 +1,13 @@
 # MicroTrace: SNP-Based Clustering for Pathogen Outbreak Detection
 
-**MicroTrace** is an open-source R tool for performing real-time clustering of pathogen samples based on SNP distance matrices. It enables outbreak detection using hierarchical clustering and metadata integration.
+**MicroTrace** is a lightweight R package for detecting SNP-based transmission clusters from pathogen genome distance matrices.
 
 ## 🚀 Features
 - Reads SNP distance matrix in CSV format
-- Suggests SNP threshold based on distribution
+- Suggests SNP threshold based on distance distribution
 - Performs hierarchical clustering (UPGMA)
 - Merges optional sample metadata (e.g., ward, date)
-- Outputs cluster table and dendrogram image
+- Outputs cluster table, dendrogram, and SNP distance plots
 - Generates publication-ready HTML reports (via R Markdown)
 
 ## 📦 Installation
@@ -24,9 +24,12 @@ MicroTrace/
 ├── MicroTrace_Report.Rmd      # R Markdown HTML report
 ├── data/
 │   ├── sim_snp_dist.csv       # Example SNP distance matrix
-│   └── metadata.csv           # Sample metadata
+│   ├── metadata.csv           # Sample metadata
+│   └── intra_cluster_stats.csv
 ├── docs/
-│   └── example_dendrogram.png
+│   ├── example_dendrogram.png
+│   ├── snp_distance_histogram.png
+│   └── snp_distance_density.png
 ├── tests/
 │   └── test_microtrace.R      # Unit tests
 ├── paper/
@@ -51,10 +54,21 @@ source("MicroTrace.R")
 rmarkdown::render("MicroTrace_Report.Rmd")
 ```
 
+## 📊 Output Files
+- `cluster_assignments.csv`: sample-to-cluster table
+- `intra_cluster_stats.csv`: summary of SNP distances within clusters
+- `example_dendrogram.png`: visual tree with SNP threshold cut
+- `snp_distance_histogram.png`: histogram of all SNP pairwise distances
+- `snp_distance_density.png`: density plot of SNP distances
+
 ## 📝 Citation
 If you use this tool in your research, please cite:
 
 Lai, K. (2025). *MicroTrace: A Lightweight R Tool for SNP-Based Pathogen Clustering in Outbreak Detection*. Journal of Open Source Software.
+
+## 📚 Additional Resources
+
+- [Statistical rationale: SNP distance histogram and thresholding](docs/snp_distance_analysis.md)
 
 ## 📜 License
 MIT License

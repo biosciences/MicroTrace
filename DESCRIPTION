@@ -4,7 +4,7 @@ Version: 1.0.0
 Authors@R: c(
   person("Kaitao", "Lai", email = "drktla@gmail.com", role = c("aut", "cre"))
 )
-Description: MicroTrace identifies clusters of pathogen genomes based on pairwise SNP distances for real-time outbreak tracking. Designed in R, it supports metadata integration, dendrogram visualization, and automatic threshold suggestions.
+Description: MicroTrace identifies clusters of pathogen genomes based on pairwise SNP distances for real-time outbreak tracking. Designed in R, it supports metadata integration, dendrogram visualization, SNP histogram/density plotting, intra-cluster SNP summary statistics, and automatic threshold suggestions. It generates a reproducible HTML report for public health communication and outbreak monitoring.
 License: MIT
 Encoding: UTF-8
 LazyData: true
@@ -15,6 +15,9 @@ Imports:
     ggplot2,
     dendextend,
     dplyr
+Suggests:
+    testthat,
+    rmarkdown
 RoxygenNote: 7.1.2
 URL: https://github.com/biosciences/MicroTrace
 BugReports: https://github.com/biosciences/MicroTrace/issues
