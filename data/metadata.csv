@@ -1,0 +1,11 @@
+Sample,Collection_Date,Ward,Patient_ID
+Sample_1,2023-01-01,Ward_A,P001
+Sample_2,2023-01-02,Ward_A,P002
+Sample_3,2023-01-03,Ward_A,P003
+Sample_4,2023-01-04,Ward_A,P004
+Sample_5,2023-01-05,Ward_A,P005
+Sample_6,2023-01-06,Ward_B,P006
+Sample_7,2023-01-07,Ward_B,P007
+Sample_8,2023-01-08,Ward_B,P008
+Sample_9,2023-01-09,Ward_B,P009
+Sample_10,2023-01-10,Ward_B,P010

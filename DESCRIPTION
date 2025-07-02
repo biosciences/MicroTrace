@@ -1,0 +1,20 @@
+Package: MicroTrace
+Title: Lightweight SNP-based Clustering Tool for Outbreak Detection
+Version: 1.0.0
+Authors@R: c(
+  person("Kaitao", "Lai", email = "drktla@gmail.com", role = c("aut", "cre"))
+)
+Description: MicroTrace identifies clusters of pathogen genomes based on pairwise SNP distances for real-time outbreak tracking. Designed in R, it supports metadata integration, dendrogram visualization, and automatic threshold suggestions.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.6.0)
+Imports:
+    ape,
+    readr,
+    ggplot2,
+    dendextend,
+    dplyr
+RoxygenNote: 7.1.2
+URL: https://github.com/biosciences/MicroTrace
+BugReports: https://github.com/biosciences/MicroTrace/issues
