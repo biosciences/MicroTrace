@@ -3,7 +3,6 @@
 **MicroTrace** is a lightweight R package for detecting SNP-based transmission clusters from pathogen genome distance matrices.
 
 ## 📄 Project Links
-
 - 📂 [Source Code](https://github.com/biosciences/MicroTrace): Explore the full repository
 - 🔗 [Live Report](https://biosciences.github.io/MicroTrace/MicroTrace_Report.html): View the interactive HTML output
 
@@ -26,6 +25,8 @@ install.packages(c("ape", "ggplot2", "readr", "dplyr", "dendextend"))
 ```
 MicroTrace/
 ├── MicroTrace.R               # Main analysis script
+├── convert_snp_dists_to_microtrace.py  # convert a SNP distance matrix
+├── test_microtrace.R      # Unit tests
 ├── MicroTrace_Report.Rmd      # R Markdown HTML report
 ├── data/
 │   ├── sim_snp_dist.csv       # Example SNP distance matrix
@@ -35,8 +36,6 @@ MicroTrace/
 │   ├── example_dendrogram.png
 │   ├── snp_distance_histogram.png
 │   └── snp_distance_density.png
-├── tests/
-│   └── test_microtrace.R      # Unit tests
 ├── paper/
 │   ├── paper.md               # JOSS manuscript
 │   └── paper.bib              # References
@@ -44,6 +43,34 @@ MicroTrace/
 ├── LICENSE                    # MIT license
 └── README.md
 ```
+## 📦 Installation
+You need R (≥ 3.6) and the following R packages:
+
+```r
+install.packages(c("ape", "ggplot2", "readr", "dplyr", "dendextend"))
+```
+
+## 🧬 Preparing Input from SNP-Dists
+
+If you have a core genome alignment (e.g., from Snippy), you can compute SNP distances using [`snp-dists`](https://github.com/tseemann/snp-dists):
+
+### 1. Install snp-dists via conda:
+```bash
+conda install -c bioconda snp-dists
+```
+
+### 2. Run snp-dists on your alignment:
+```bash
+snp-dists core.full.aln > snp_dist.tsv
+```
+
+### 3. Convert to MicroTrace-compatible CSV:
+Use the provided Python script:
+```bash
+python tools/convert_snp_dists_to_microtrace.py -i snp_dist.tsv -o data/sim_snp_dist.csv
+```
+
+This will produce a `sim_snp_dist.csv` file readable by MicroTrace.
 
 ## 🧪 Example Usage
 
@@ -53,7 +80,7 @@ MicroTrace/
 source("MicroTrace.R")
 ```
 
-2. Generate report:
+2. Generate the HTML report:
 
 ```r
 rmarkdown::render("MicroTrace_Report.Rmd")
