@@ -2,6 +2,11 @@
 
 **MicroTrace** is a lightweight R package for detecting SNP-based transmission clusters from pathogen genome distance matrices.
 
+## 📄 Project Links
+
+- 📂 [Source Code](https://github.com/biosciences/MicroTrace): Explore the full repository
+- 🔗 [Live Report](https://biosciences.github.io/MicroTrace/MicroTrace_Report.html): View the interactive HTML output
+
 ## 🚀 Features
 - Reads SNP distance matrix in CSV format
 - Suggests SNP threshold based on distance distribution
