@@ -96,7 +96,7 @@ rmarkdown::render("MicroTrace_Report.Rmd")
 ## 📝 Citation
 If you use this tool in your research, please cite:
 
-Lai, K. (2025). *MicroTrace: A Lightweight R Tool for SNP-Based Pathogen Clustering in Outbreak Detection*. Journal of Open Source Software.
+Lai, K. (2025). *MicroTrace: A Lightweight R Tool for SNP-Based Pathogen Clustering in Outbreak Detection*. Journal of Open Source Software (under review).
 
 ## 📚 Additional Resources
 
