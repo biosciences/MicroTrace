@@ -68,9 +68,9 @@ The `MicroTrace_Report.Rmd` template provides a user-friendly, customizable HTML
 
 # Acknowledgements
 
-The idea for MicroTrace originated during my involvement in antimicrobial resistance surveillance projects, where I observed a recurring gap between high-throughput WGS data and pragmatic, interpretable clustering tools usable by clinical microbiologists. This led me to develop a self-contained R solution focused on outbreak clustering logic, metadata overlay, and report generation. I thank Professor Vitali Sintchenko and the SydneyID community for fostering applied genomics thinking and encouraging a culture of lightweight, real-time analytics in infectious disease genomics.
+The idea for MicroTrace originated during my involvement in antimicrobial resistance surveillance projects, where I observed a recurring gap between high-throughput WGS data and pragmatic, interpretable clustering tools usable by clinical microbiologists. This led me to develop a self-contained R solution focused on outbreak clustering logic, metadata overlay, and report generation. I thank the research community of University of Sydney for fostering applied genomics thinking and encouraging a culture of lightweight, real-time analytics in infectious disease genomics.
 
-The author acknowledges Professor Vitali Sintchenko and colleagues from the Sydney Infectious Diseases Institute for insights on real-time SNP clustering in public health genomics.
+The author acknowledges colleagues from University of Sydney for insights on real-time SNP clustering in public health genomics.
 
 # References
 
