@@ -11,6 +11,10 @@ affiliations:
 
 date: 2025-07-02
 bibliography: paper.bib
+output:
+  pdf_document:
+    keep_tex: true
+    latex_engine: pdflatex
 ---
 
 # Summary
@@ -19,9 +23,9 @@ bibliography: paper.bib
 
 # Statement of Need
 
-This tool was motivated by my own experience supporting hospital outbreak investigations where rapid, reproducible, and interpretable clustering was required—but often slowed by the complexity or inflexibility of available pipelines. During exploratory analyses of SNP distance matrices, I observed that closely related isolates often exhibited SNP distances in the lowest decile of all pairwise comparisons. As such, MicroTrace uses the **10th percentile of SNP distances** as a conservative default threshold for outbreak definition—prioritizing sensitivity in early cluster detection. This approach reflects empirical patterns in genomic epidemiology while remaining adjustable for local context.
+This tool was motivated by my own experience supporting hospital outbreak investigations where rapid, reproducible, and interpretable clustering was required—but often slowed by the complexity or inflexibility of available pipelines. During exploratory analyses of SNP distance matrices, I observed that closely related isolates often exhibited SNP distances in the lowest decile of all pairwise comparisons. As such, MicroTrace uses the **10th percentile of SNP distances** as a conservative default threshold for outbreak definition—prioritizing sensitivity in early cluster detection. This approach reflects empirical patterns in genomic epidemiology [@payne2021dynamic] while remaining adjustable for local context.
 
-Although whole-genome sequencing (WGS) has revolutionized pathogen surveillance, outbreak detection workflows often remain fragmented and require specialized tools or pipelines. Tools like Snippy provide variant calling, and visualization platforms such as GrapeTree offer phylogenetic context, but a lightweight, scriptable R solution for direct clustering from SNP matrices is lacking.
+Although whole-genome sequencing (WGS) has revolutionized pathogen surveillance [@koser2012wgs], outbreak detection workflows often remain fragmented and require specialized tools or pipelines. Tools like Snippy [@seemann2015snippy] provide variant calling, and visualization platforms such as GrapeTree offer phylogenetic context, but a lightweight, scriptable R solution for direct clustering from SNP matrices is lacking.
 
 **MicroTrace** addresses this need by providing:
 - Automated hierarchical clustering with configurable SNP thresholds
@@ -66,6 +70,11 @@ This supports reproducibility and continuous integration.
 
 The `MicroTrace_Report.Rmd` template provides a user-friendly, customizable HTML report. It summarizes the clustering results, visualizes the SNP distance histogram, density plot, dendrogram, and presents metadata-aware statistics. This facilitates communication with infection control or public health teams.
 
+# Software Repository
+
+The source code for MicroTrace is freely available on GitHub at:  
+[https://github.com/biosciences/MicroTrace](https://github.com/biosciences/MicroTrace)
+
 # Acknowledgements
 
 The idea for MicroTrace originated during my involvement in antimicrobial resistance surveillance projects, where I observed a recurring gap between high-throughput WGS data and pragmatic, interpretable clustering tools usable by clinical microbiologists. This led me to develop a self-contained R solution focused on outbreak clustering logic, metadata overlay, and report generation. I thank the research community of University of Sydney for fostering applied genomics thinking and encouraging a culture of lightweight, real-time analytics in infectious disease genomics.
@@ -73,9 +82,3 @@ The idea for MicroTrace originated during my involvement in antimicrobial resist
 The author acknowledges colleagues from University of Sydney for insights on real-time SNP clustering in public health genomics.
 
 # References
-
-- Payne, M. et al. (2021). Enhancing genomics-based outbreak detection of endemic *Salmonella enterica* serovar Typhimurium using dynamic thresholds. *Microbial Genomics*, 7(6), 000310. https://doi.org/10.1099/mgen.0.000310
-
-- Seemann, T. (2015). Snippy: Rapid haploid variant calling and core genome alignment. GitHub. https://github.com/tseemann/snippy
-
-- Köser, C. U. et al. (2012). Routine use of microbial whole genome sequencing in diagnostic and public health microbiology. *PLoS Pathogens*, 8(8), e1002824. https://doi.org/10.1371/journal.ppat.1002824
